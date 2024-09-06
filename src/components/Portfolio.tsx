@@ -1,50 +1,59 @@
 "use client";
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import React, { Suspense, useRef, useState } from "react";
 import Image from "next/image";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Mesh, MeshStandardMaterial, BoxGeometry } from "three"; // Import types and classes from three.js
+import { Mesh, MeshStandardMaterial} from "three"; // Import types and classes from three.js
 
 function RotatingCube() {
-  const meshRef = useRef<Mesh>(null);
-  const [hovered, setHovered] = useState(false);
-  const [clicked, setClicked] = useState(false);
-
-  // Rotate the cube on each frame
-  useFrame(() => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += 0.01;
-      meshRef.current.rotation.y += 0.01;
-    }
-  });
-
-  // Subtle color differences for each face
-  const materials: MeshStandardMaterial[] = [
-    new MeshStandardMaterial({ color: "#b2d8d8" }), // Light cyan
-    new MeshStandardMaterial({ color: "#a1c4c4" }), // Subtle green-blue
-    new MeshStandardMaterial({ color: "#b3e0e0" }), // Light teal
-    new MeshStandardMaterial({ color: "#c9e2e2" }), // Very light blue
-    new MeshStandardMaterial({ color: "#d0f2f2" }), // Very pale teal
-    new MeshStandardMaterial({ color: "#d9ffff" }), // Subtle pale blue
-  ];
-
-  return (
-    <mesh
-      ref={meshRef}
-      position={[0, 0, 0]}
-      scale={clicked ? 1.5 : 1} // Scale up when clicked
-      onClick={() => setClicked(!clicked)} // Toggle scale when clicked
-      onPointerOver={() => setHovered(true)} // Change color on hover
-      onPointerOut={() => setHovered(false)} // Reset color on hover out
-      material={materials} // Apply the array of subtle materials
-    >
-      <boxGeometry args={[4, 4, 4]} />
-    </mesh>
-  );
-}
+    const meshRef = useRef<Mesh>(null);
+    const [hovered, setHovered] = useState(false);
+    const [clicked, setClicked] = useState(false);
+  
+    // Rotate the cube on each frame
+    useFrame(() => {
+      if (meshRef.current) {
+        meshRef.current.rotation.x += 0.01;
+        meshRef.current.rotation.y += 0.01;
+      }
+    });
+  
+    // Subtle color differences for each face when not hovered
+    const defaultMaterials: MeshStandardMaterial[] = [
+      new MeshStandardMaterial({ color: "#b2d8d8" }), // Light cyan
+      new MeshStandardMaterial({ color: "#a1c4c4" }), // Subtle green-blue
+      new MeshStandardMaterial({ color: "#b3e0e0" }), // Light teal
+      new MeshStandardMaterial({ color: "#c9e2e2" }), // Very light blue
+      new MeshStandardMaterial({ color: "#d0f2f2" }), // Very pale teal
+      new MeshStandardMaterial({ color: "#d9ffff" }), // Subtle pale blue
+    ];
+  
+    // Colors for when the cube is hovered
+    const hoverMaterials: MeshStandardMaterial[] = [
+      new MeshStandardMaterial({ color: "#ffcccc" }), // Subtle red
+      new MeshStandardMaterial({ color: "#ff9999" }), // Light red
+      new MeshStandardMaterial({ color: "#ff6666" }), // Soft pink
+      new MeshStandardMaterial({ color: "#ff3333" }), // Coral
+      new MeshStandardMaterial({ color: "#ff0000" }), // Red
+      new MeshStandardMaterial({ color: "#cc0000" }), // Darker red
+    ];
+  
+    return (
+      <mesh
+        ref={meshRef}
+        position={[0, 0, 0]}
+        scale={clicked ? 1.5 : 1} // Scale up when clicked
+        onClick={() => setClicked(!clicked)} // Toggle scale when clicked
+        onPointerOver={() => setHovered(true)} // Change color on hover
+        onPointerOut={() => setHovered(false)} // Reset color on hover out
+        material={hovered ? hoverMaterials : defaultMaterials} // Apply hover materials if hovered
+      >
+        <boxGeometry args={[4, 4, 4]} />
+      </mesh>
+    );
+  }
 
 export default function Portfolio() {
   return (
