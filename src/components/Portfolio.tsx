@@ -1,8 +1,8 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardContent } from "@/components/ui/card"
-import React, { Suspense } from 'react';
-
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import React, { Suspense } from "react";
+import Image from "next/image";
 
 export default function Portfolio() {
   return (
@@ -59,14 +59,13 @@ export default function Portfolio() {
             </div>
             <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
               <div>
-                <div />
                 <ambientLight intensity={0.5} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-                <Suspense fallback={null}>
-                  <div>
+                <Suspense fallback={<div>Loading...</div>}>
+                  <mesh>
                     <boxGeometry args={[2, 2, 2]} />
                     <meshStandardMaterial color="#55efc4" />
-                  </div>
+                  </mesh>
                 </Suspense>
               </div>
             </div>
@@ -85,7 +84,7 @@ export default function Portfolio() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-background p-4 rounded-lg shadow-sm">
                     <h3 className="text-xl font-bold">Education</h3>
-                    <p className="text-muted-foreground">Bachelor's Degree in Computer Science</p>
+                    <p className="text-muted-foreground">Bachelor&#39;s Degree in Computer Science</p>
                   </div>
                   <div className="bg-background p-4 rounded-lg shadow-sm">
                     <h3 className="text-xl font-bold">Skills</h3>
@@ -107,14 +106,14 @@ export default function Portfolio() {
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 rounded-full bg-primary" />
                         <div>
-                          <p className="text-sm font-medium">Bachelor's Degree</p>
+                          <p className="text-sm font-medium">Bachelor&#39;s Degree</p>
                           <p className="text-muted-foreground text-sm">2015 - 2019</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 rounded-full bg-primary" />
                         <div>
-                          <p className="text-sm font-medium">Master's Degree</p>
+                          <p className="text-sm font-medium">Master&#39;s Degree</p>
                           <p className="text-muted-foreground text-sm">2019 - 2021</p>
                         </div>
                       </div>
@@ -138,7 +137,7 @@ export default function Portfolio() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       src="/placeholder.svg"
                       width={48}
                       height={48}
@@ -176,7 +175,7 @@ export default function Portfolio() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       src="/placeholder.svg"
                       width={48}
                       height={48}
@@ -226,7 +225,7 @@ export default function Portfolio() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       src="/placeholder.svg"
                       width={100}
                       height={150}
@@ -261,7 +260,7 @@ export default function Portfolio() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       src="/placeholder.svg"
                       width={100}
                       height={150}
@@ -300,43 +299,44 @@ export default function Portfolio() {
   )
 }
 
+
+
 function MenuIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>
-  )
-}
-
-
-function MountainIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
-  )
-}
+    return (
+      <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <line x1="4" x2="20" y1="12" y2="12" />
+        <line x1="4" x2="20" y1="6" y2="6" />
+        <line x1="4" x2="20" y1="18" y2="18" />
+      </svg>
+    );
+  }
+  
+  function MountainIcon(props) {
+    return (
+      <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+      </svg>
+    );
+  }
