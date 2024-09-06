@@ -1,0 +1,60 @@
+# Node.js dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Next.js build output
+/.next
+/out
+/build
+
+# Production build files
+/build
+/dist
+
+# Static files like images
+/public/*.svg
+/public/*.png
+/public/*.jpg
+/public/*.jpeg
+/public/*.gif
+
+# Typescript cache
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+/coverage
+/.nyc_output
+/coverage.json
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Build tools
+/node_modules/
+package-lock.json
+yarn.lock
+
+# Tailwind config (generated and temp files)
+.tailwindcache
