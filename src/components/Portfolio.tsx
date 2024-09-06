@@ -201,10 +201,13 @@ export default function Portfolio() {
                         <div className="w-4 h-4 rounded-full bg-primary" />
                         <div>
                           <p className="text-sm font-medium">
-                            Bachelor&#39;s Degree
+                            Bachelor in Computer Science
                           </p>
                           <p className="text-muted-foreground text-sm">
-                            2015 - 2019
+                            Grade: 16.9/20
+                          </p>
+                          <p className="text-muted-foreground text-sm">
+                            2019 - 2022
                           </p>
                         </div>
                       </div>
@@ -212,10 +215,13 @@ export default function Portfolio() {
                         <div className="w-4 h-4 rounded-full bg-primary" />
                         <div>
                           <p className="text-sm font-medium">
-                            Master&#39;s Degree
+                            Master in Information and Computer Sciences
                           </p>
                           <p className="text-muted-foreground text-sm">
-                            2019 - 2021
+                            Grade: 16.6/20
+                          </p>
+                          <p className="text-muted-foreground text-sm">
+                            2022-2024
                           </p>
                         </div>
                       </div>
