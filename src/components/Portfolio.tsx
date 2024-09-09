@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import ContactSection from "./ContactSection";
 import React, { Suspense, useRef, useState } from "react";
 import Image from "next/image";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -75,28 +76,28 @@ export default function Portfolio() {
         </Link>
         <nav className="hidden md:flex items-center gap-4">
           <Link
-            href="#"
+            href="#about"
             className="text-sm font-medium hover:underline underline-offset-4"
             prefetch={false}
           >
             About
           </Link>
           <Link
-            href="#"
+            href="#experience"
             className="text-sm font-medium hover:underline underline-offset-4"
             prefetch={false}
           >
-            Experience
+            Work Experience
           </Link>
           <Link
-            href="#"
+            href="#projects"
             className="text-sm font-medium hover:underline underline-offset-4"
             prefetch={false}
           >
-            Publications
+            Projects and Research
           </Link>
           <Link
-            href="#"
+            href="#contact"
             className="text-sm font-medium hover:underline underline-offset-4"
             prefetch={false}
           >
@@ -132,6 +133,8 @@ export default function Portfolio() {
                 </h1>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Explore my skills, experience, and academic work.
+                      <br></br>
+                  (The cube does nothing.)
                 </p>
               </div>
               {/* <div className="flex flex-col gap-2">
@@ -301,8 +304,9 @@ export default function Portfolio() {
                     <div className="bg-background p-4 rounded-lg shadow-sm">
                       <h4 className="text-lg font-bold">Achievements</h4>
                       <p className="text-muted-foreground">
-                        An application that effectively displays the past and
-                        current status of the stock and updates daily, including
+                        An application that seamlessly integrates into the existing
+                        infrastructure and effectively displays and updates the past and
+                        current status of the stock, including
                         an alarming system with dynamic thresholds that can be
                         changed by the user.
                       </p>
@@ -355,7 +359,7 @@ export default function Portfolio() {
           </div>
         </section>
         <section
-          id="publications"
+          id="projects"
           className="w-full py-12 md:py-24 lg:py-32 bg-muted"
         >
           <div className="container px-4 md:px-6">
@@ -467,6 +471,10 @@ export default function Portfolio() {
               {/* Add more <Card> components as needed */}
             </div>
           </div>
+        </section>
+        <section id="contact">
+              
+        <ContactSection></ContactSection>
         </section>
       </main>
     </div>
