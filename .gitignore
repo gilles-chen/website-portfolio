@@ -12,12 +12,12 @@
 /build
 /dist
 
-# Static files like images
-/public/*.svg
-/public/*.png
-/public/*.jpg
-/public/*.jpeg
-/public/*.gif
+# # Static files like images
+# /public/*.svg
+# /public/*.png
+# /public/*.jpg
+# /public/*.jpeg
+# /public/*.gif
 
 # Typescript cache
 *.tsbuildinfo
