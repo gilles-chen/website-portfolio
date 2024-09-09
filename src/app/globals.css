@@ -67,3 +67,48 @@
     @apply bg-background text-foreground;
   }
 }
+
+.glitch {
+  color: #fff;
+  position: relative;
+}
+
+.glitch:before,
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch:before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitch 1s infinite;
+}
+
+.glitch:after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+  animation: glitch 1s infinite;
+}
+
+@keyframes gradientReveal {
+  from {
+    background-position: 200%;
+  }
+  to {
+    background-position: 0%;
+  }
+}
+
+.gradient-reveal {
+  background: linear-gradient(90deg, rgba(255,0,150,1) 0%, rgba(0,200,255,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  animation: gradientReveal 2s ease-in forwards;
+}
+
