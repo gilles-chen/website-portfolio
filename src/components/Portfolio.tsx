@@ -58,14 +58,14 @@ function RotatingCube() {
 }
 
 export default function Portfolio() {
-  // State to manage showing the iframe for the first project
-  const [showIframe, setShowIframe] = useState(false);
+  // // State to manage showing the iframe for the first project
+  // const [showIframe, setShowIframe] = useState(false);
 
-  // Function to toggle the iframe visibility
-  const handleReadMoreClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault(); // Prevents the default anchor tag behavior
-    setShowIframe(!showIframe); // Toggles the iframe state
-  };
+  // // Function to toggle the iframe visibility
+  // const handleReadMoreClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  //   event.preventDefault(); // Prevents the default anchor tag behavior
+  //   setShowIframe(!showIframe); // Toggles the iframe state
+  // };
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -400,16 +400,16 @@ export default function Portfolio() {
                 <CardContent className="p-6">
               <p className="text-gray-600 leading-relaxed max-w-prose">
                 This project introduces an automated framework that generates high-quality multiple-choice
-                questions (MCQs) using the large language model GPT-4o, focusing on minimizing common writing
+                questions (MCQs) using the large language model GPT-4o and prompt engineering techniques, focusing on minimizing common writing
                 flaws. The framework is designed to create MCQs aligned with the first three cognitive levels of
                 Bloom&apos;s Taxonomy: Remembering, Understanding, and Applying.
               </p>
 
               {/* Conditionally render the iframe based on the showIframe state */}
-              {showIframe && (
+              {/* {showIframe && (
                 <div className="mt-4">
                   <iframe
-                    src="/Masters_Thesis.pdf" // Replace with your actual PDF path
+                    src="/Masters_Thesis.pdf"
                     width="100%"
                     height="600px"
                     style={{ border: 'none' }}
@@ -418,16 +418,16 @@ export default function Portfolio() {
                     <a href="/Masters_Thesis.pdf">download the PDF</a> instead.
                   </iframe>
                 </div>
-              )}
+              )} */}
 
               {/* "Read more" link to toggle the iframe */}
-              <a
+              {/* <a
                 href="#"
                 onClick={handleReadMoreClick} // Toggle iframe visibility
                 className="text-blue-600 hover:underline mt-4 inline-block"
               >
                 {showIframe ? 'Hide Document' : 'View Document'}
-              </a>
+              </a> */}
             </CardContent>
           </Card>
 
