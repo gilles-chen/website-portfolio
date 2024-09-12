@@ -1,0 +1,75 @@
+{
+    "aboutMe": {
+      "title": "About Me",
+      "description": "Coming soon",
+      "skills": [
+        "Python",
+        "Extract Transform Load (ETL)",
+        "Prompt Engineering",
+        "JavaScript",
+        "React",
+        "WordPress",
+        "Elementor",
+        "PHP",
+        "SQL"
+      ],
+      "education": [
+        {
+          "degree": "Master's Degree in Information and Computer Sciences",
+          "university": "University of Luxembourg",
+          "grade": "16.6/20",
+          "year": "2022 - 2024",
+          "specialization": "Specialized in Machine Learning and Artificial Intelligence"
+        },
+        {
+          "degree": "Bachelor's Degree in Computer Science",
+          "university": "University of Luxembourg",
+          "grade": "16.9/20",
+          "year": "2019 - 2022"
+        }
+      ]
+    },
+    "workExperience": [
+      {
+        "title": "Software Engineer Internship",
+        "company": "POST Luxembourg",
+        "year": "2022",
+        "description": "As a Software Engineer at POST for an Internship during my final Bachelor Semester, I was responsible for developing an application to track the daily changes in the network components stock. This involved many moving parts, as it was important to integrate this application within the sophisticated system at POST. This involved the parsing of stock information exports, displaying the current and past stock and implementing an alarming system based on dynamic thresholds that can be overridden by the user.",
+        "technologies": [
+          "PostgreSQL",
+          "influxdb",
+          "LIT Web Components",
+          "FastAPI",
+          "Extract-Transform-Load (ETL)",
+          "Python",
+          "TiG Stack (Telegraf, influxdb, Grafana)",
+          "Icinga"
+        ],
+        "achievements": "An application that seamlessly integrates into the existing infrastructure and effectively displays and updates the past and current status of the stock, including an alarming system with dynamic thresholds that can be changed by the user.",
+        "logo": "/Post_Luxembourg_logo.png"
+      },
+      {
+        "title": "Peer Tutor",
+        "company": "University of Luxembourg",
+        "year": "2020 - 2021",
+        "description": "As a Peer Tutor at the University of Luxembourg for 1st and 2nd Semester Students, I held weekly 90-minute tutoring sessions, where participating students were free to ask any questions they had related to their studies. If there were no questions, the tutoring sessions would focus on the subjects that the students needed help in the most, which was Java Programming for Semester 1 Students and Algorithms for Semester 2 Students. Exercises and explanations were prepared prior to every tutoring session.",
+        "topics": ["Java Programming", "Algorithms"],
+        "logo": "/Uni-Logo-1.png"
+      }
+    ],
+    "projects": [
+      {
+        "title": "A Comprehensive Framework for AI-Driven Multiple-Choice Question Generation",
+        "type": "Master's Thesis",
+        "year": "2024",
+        "description": "This project introduces an automated framework that generates high-quality multiple-choice questions (MCQs) using the large language model GPT-4 and prompt engineering techniques, focusing on minimizing common writing flaws. The framework is designed to create MCQs aligned with the first three cognitive levels of Bloom's Taxonomy: Remembering, Understanding, and Applying."
+      },
+      {
+        "title": "Improving the Network Components Stock Management at POST",
+        "type": "Bachelor's Thesis",
+        "year": "2022",
+        "description": "This project focuses on developing a solution to streamline the manual processes involved in managing network component stock for large companies. The current workflow requires significant manual intervention, which is time-consuming and inefficient. The new application aims to automate much of the stock management process, simplifying the workflow for current and future users."
+      }
+    ]
+  }
+  
