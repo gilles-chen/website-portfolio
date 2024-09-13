@@ -9,6 +9,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Mesh, MeshStandardMaterial } from "three";
 import Typewriter from "typewriter-effect";
 import data from "./data.json"; // Import the JSON data
+import { Badge } from "@/components/ui/badge";
 
 const { aboutMe, workExperience, projects } = data;
 
@@ -104,7 +105,10 @@ export default function Portfolio() {
       {/* Main Content */}
       <main className="flex-1">
         {/* Hero Section */}
-        <section id="hero" className="w-full py-12 md:py-24 lg:py-32 bg-[#F5F3EE]">
+        <section
+          id="hero"
+          className="w-full py-12 md:py-24 lg:py-32 bg-[#F5F3EE]"
+        >
           <div className="container grid grid-cols-1 md:grid-cols-[70%_30%] gap-8 px-4 md:px-6">
             {/* Left side: About me section */}
             <div className="flex flex-col justify-center space-y-4">
@@ -168,11 +172,15 @@ export default function Portfolio() {
                   {aboutMe.description}
                 </p>
                 <div className="grid gap-4">
-                  <div className="bg-background p-4 rounded-lg shadow-sm">
-                    <h3 className="text-xl font-bold">Skills</h3>
-                    <p className="text-muted-foreground">
-                      {aboutMe.skills.join(", ")}
-                    </p>
+                  <div className="bg-background p-6 rounded-lg shadow-sm">
+                    <h3 className="text-xl font-bold mb-4">Skills</h3>
+                    <div className="flex flex-wrap gap-3">
+                      {aboutMe.skills.map((skill) => (
+                        <Badge key={skill} className="px-3 py-1 text-sm">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -183,7 +191,10 @@ export default function Portfolio() {
                 </h2>
 
                 {aboutMe.education.map((edu, index) => (
-                  <div key={index} className="bg-background p-6 rounded-lg shadow-lg">
+                  <div
+                    key={index}
+                    className="bg-background p-6 rounded-lg shadow-lg"
+                  >
                     <div className="space-y-4">
                       <div className="flex items-center gap-4">
                         <div>
@@ -194,7 +205,9 @@ export default function Portfolio() {
                           <p className="text-muted-foreground text-sm">
                             Grade: {edu.grade}
                           </p>
-                          <p className="text-muted-foreground text-sm">{edu.year}</p>
+                          <p className="text-muted-foreground text-sm">
+                            {edu.year}
+                          </p>
                           {edu.specialization && (
                             <p className="text-sm font-semibold text-white bg-primary rounded-full px-3 py-1 inline-block mt-2">
                               {edu.specialization}
@@ -245,15 +258,21 @@ export default function Portfolio() {
                       {job.technologies && (
                         <div className="bg-background p-4 rounded-lg shadow-sm">
                           <h4 className="text-lg font-bold">Technologies</h4>
-                          <p className="text-muted-foreground">
-                            {job.technologies.join(", ")}
-                          </p>
+                          <div className="mt-2 flex flex-wrap gap-2">
+                            {job.technologies.map((tech) => (
+                              <Badge key={tech} className="px-2 py-1 text-sm">
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
                         </div>
                       )}
                       {job.achievements && (
                         <div className="bg-background p-4 rounded-lg shadow-sm">
                           <h4 className="text-lg font-bold">Achievements</h4>
-                          <p className="text-muted-foreground">{job.achievements}</p>
+                          <p className="text-muted-foreground">
+                            {job.achievements}
+                          </p>
                         </div>
                       )}
                       {job.topics && (
@@ -273,20 +292,31 @@ export default function Portfolio() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section
+          id="projects"
+          className="w-full py-12 md:py-24 lg:py-32 bg-muted"
+        >
           <div className="container px-4 md:px-6">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Academic Projects and Research
               </h2>
               <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                This section showcases a collection of scientific documents, research papers, and academic projects I developed during my time at university. Though unpublished, these works reflect my commitment to exploring various topics in Computer Science, demonstrating the skills and knowledge I gained throughout my academic journey.
+                This section showcases a collection of scientific documents,
+                research papers, and academic projects I developed during my
+                time at university. Though unpublished, these works reflect my
+                commitment to exploring various topics in Computer Science,
+                demonstrating the skills and knowledge I gained throughout my
+                academic journey.
               </p>
             </div>
 
             <div className="grid gap-6 mt-8 grid-cols-1 md:grid-cols-2">
               {projects.map((project, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+                <Card
+                  key={index}
+                  className="hover:shadow-lg transition-shadow duration-300"
+                >
                   <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50">
                     <div className="flex items-center gap-4">
                       <div>
